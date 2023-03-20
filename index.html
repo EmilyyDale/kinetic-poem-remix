@@ -8,26 +8,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap"
-      rel="stylesheet"
-    />
+      rel="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <!-- end custom font -->
 
-    <title>We walk to you</title>
+    <title>Sand flow</title>
 
     <!-- styles -->
     <style>
       body {
-        font-family: "Dosis", sans-serif;
-        margin: 2em;
-        background-color: #000;
-        color: #fff;
-        font-size: 1.2em;
+        font-family: 'Poiret One', cursive;
+        margin: 3em;
+        background-color: #1E4CD6;
+        color: #EBD795;
+        font-size: 1.5em;
       }
       h1 {
-        color: #fff;
+        color: #EBD795;
       }
       #poem > div {
-        height: 1.2em;
+        height: 1.9em;
       }
       .indent {
         padding-left: 1em;
@@ -35,13 +36,13 @@
     </style>
   </head>
   <body>
-    <h1>We walk to you</h1>
+    <h1>Sand flow</h1>
     <div id="poem"></div>
     <script>
       // set up the lists of words
-      const subjects = "you,I,we,they".split(","),
-        verbs = "run,walk,speak,drift,talk,whisper".split(","),
-        objects = "me,you,her,him,them".split(",");
+      const subjects = "water,wave,current,a castle".split(","),
+        verbs = "wash,split,waft,displace,swallow,trickles".split(","),
+        objects = ",salt,granules,depth,the sand".split(",");
       // set up the counter
       let counter = 0;
 
@@ -59,9 +60,9 @@
         }
         const text =
           getRandomFromList(subjects) +
-          " " +
-          getRandomFromList(verbs) +
           " to " +
+          getRandomFromList(verbs) +
+          "  " +
           getRandomFromList(objects);
         const lineText = document.createTextNode(text);
         line.appendChild(lineText);
@@ -83,7 +84,7 @@
       // implement the rules of the poem
       function processPoem() {
         counter++;
-        if (counter % 5 === 0) {
+        if (counter % 6 === 0) {
           addBlankLine();
         } else if (counter % 5 === 2 || counter % 5 === 4) {
           // if the second or fourth line add the line with an indent
@@ -95,7 +96,7 @@
           removeFirstLine();
         }
       }
-      window.setInterval(processPoem, 1000);
+      window.setInterval(processPoem, 2000);
     </script>
 
     <!-- include the Glitch button to show what the webpage is about and
